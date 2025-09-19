@@ -110,6 +110,8 @@ This project follows TDD principles with comprehensive test coverage including:
 - **sweets**: Product inventory with categories and pricing
 - Row Level Security policies for data protection
 
+
+
 ## 📱 Design System
 
 ### Color Palette

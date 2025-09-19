@@ -13,7 +13,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run --coverage",
-    "vercel-build": "echo 'Using Vercel build configuration'"
+  "vercel-build": "npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

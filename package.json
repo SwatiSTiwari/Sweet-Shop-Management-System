@@ -13,9 +13,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run --coverage",
-  "vercel-build": "npm run build",
-  "build:server": "tsc -p server/tsconfig.json",
-"start:server": "node dist/server/server.js"
+  "vercel-build": "npm run build"
+ 
 
   },
   "dependencies": {

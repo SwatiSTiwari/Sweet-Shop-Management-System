@@ -27,14 +27,22 @@ A comprehensive full-stack web application for managing a sweet shop inventory, 
 - `POST /api/sweets/:id/purchase` - Purchase sweet (decreases inventory)
 - `POST /api/sweets/:id/restock` - Restock sweet (Admin only)
 
-## 🚀 Quick Start
+## 🌐 Deployment
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- Supabase account (for database)
+### Vercel Deployment
 
-### Installation
+1. **Connect Repository**: Link your GitHub repository to Vercel
+2. **Environment Variables**: Set the following in Vercel dashboard:
+   ```
+   SUPABASE_URL=https://your-project.supabase.co
+   SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+   JWT_SECRET=your-jwt-secret
+   CLIENT_URL=https://your-vercel-app.vercel.app
+   ```
+3. **Deploy**: Vercel will automatically build and deploy your application
+4. **API Routes**: The backend will be available at `/api/*` endpoints
+
+### Local Development
 
 1. **Clone and install dependencies**:
    ```bash

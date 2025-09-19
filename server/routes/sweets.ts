@@ -1,8 +1,8 @@
 import express from 'express';
 import { body, query, validationResult } from 'express-validator';
 import { v4 as uuidv4 } from 'uuid';
-import { supabase } from '../config/database';
-import { authenticateToken, requireAdmin, AuthRequest } from '../middleware/auth';
+import { supabase } from '../config/database.js';
+import { authenticateToken, requireAdmin, AuthRequest } from '../middleware/auth.js';
 
 const router = express.Router();
 

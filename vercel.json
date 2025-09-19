@@ -3,7 +3,11 @@
   "builds": [
     {
       "src": "server/server.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["server/**", "tsconfig.server.json"],
+        "use": "@vercel/node"
+      }
     }
   ],
   "routes": [
@@ -11,5 +15,11 @@
       "src": "/api/(.*)",
       "dest": "/server/server.ts"
     }
-  ]
+  ],
+  "functions": {
+    "server/server.ts": {
+      "runtime": "nodejs20.x",
+      "maxDuration": 10
+    }
+  }
 }

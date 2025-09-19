@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { supabase } from '../config/database';
+import { supabase } from '../config/database.js';
 
 export interface AuthRequest extends Request {
   user?: {
@@ -19,6 +19,7 @@ export const authenticateToken = async (req: AuthRequest, res: Response, next: N
   }
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'fallback-secret') as any;
     
     const { data: user, error } = await supabase
@@ -33,6 +34,7 @@ export const authenticateToken = async (req: AuthRequest, res: Response, next: N
 
     req.user = user;
     next();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return res.status(403).json({ error: { message: 'Invalid token', status: 403 } });
   }

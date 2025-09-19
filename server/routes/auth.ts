@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { body, validationResult } from 'express-validator';
 import { v4 as uuidv4 } from 'uuid';
-import { supabase } from '../config/database';
+import { supabase } from '../config/database.js';
 
 const router = express.Router();
 

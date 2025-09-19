@@ -12,8 +12,8 @@ console.log('SUPABASE_URL:', process.env.SUPABASE_URL);
 console.log('SUPABASE_SERVICE_ROLE_KEY:', process.env.SUPABASE_SERVICE_ROLE_KEY ? '***' : 'not set');
 
 // Route imports
-import authRoutes from './routes/auth';
-import sweetRoutes from './routes/sweets';
+import authRoutes from './routes/auth.js';
+import sweetRoutes from './routes/sweets.js';
 
 const app = express();
 

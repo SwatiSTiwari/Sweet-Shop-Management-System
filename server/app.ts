@@ -1,14 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 
+dotenv.config({ path: '.env.local' });
+
+console.log('Loaded env vars:');
+console.log('SUPABASE_URL:', process.env.SUPABASE_URL);
+console.log('SUPABASE_SERVICE_ROLE_KEY:', process.env.SUPABASE_SERVICE_ROLE_KEY ? '***' : 'not set');
+
 // Route imports
 import authRoutes from './routes/auth';
 import sweetRoutes from './routes/sweets';
-
-dotenv.config();
 
 const app = express();
 
@@ -32,7 +37,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Error handling middleware
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: any, req: express.Request, res: express.Response) => {
   console.error(err.stack);
   res.status(err.status || 500).json({
     error: {
